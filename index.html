@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TrendForge AI — Make a Week of Social Posts in Seconds</title>
+  <meta name="description" content="TrendForge AI creates hooks, captions, hashtags + a 7‑day plan — ready to post. Try Free or upgrade to Pro for 50 packs/day." />
+  <link rel="icon" href="/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:.8rem 1.1rem;font-weight:700}
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    <header class="flex items-center justify-between mb-8">
+      <div class="flex items-center gap-3">
+        <div class="h-9 w-9 rounded-lg bg-blue-600 grid place-items-center text-white font-black">TF</div>
+        <h1 class="text-2xl font-bold">TrendForge AI</h1>
+      </div>
+      <nav class="hidden md:flex items-center gap-3">
+        <a id="tryFreeTop" class="btn bg-white text-slate-900 border border-slate-300 hover:bg-slate-100" href="#" target="_blank" rel="noopener">Try Free</a>
+        <a id="upgradeTop" class="btn bg-blue-600 text-white hover:bg-blue-700" href="#" target="_blank" rel="noopener">Upgrade to Pro</a>
+      </nav>
+    </header>
+
+    <section class="grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold leading-tight">Make a Week of Social Posts in Seconds</h2>
+        <p class="mt-4 text-lg text-slate-700">Hooks, captions, hashtags + a 7‑day plan — ready to post.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a id="tryFreeHero" class="btn bg-blue-600 text-white hover:bg-blue-700" href="#" target="_blank" rel="noopener">Try Free</a>
+          <a id="upgradeHero" class="btn bg-white text-slate-900 border border-slate-300 hover:bg-slate-100" href="#" target="_blank" rel="noopener">Upgrade to Pro</a>
+        </div>
+        <p class="mt-3 text-xs text-slate-500">If the buttons don’t open, check the URLs set at the bottom of this file.</p>
+      </div>
+      <div class="rounded-2xl shadow bg-white border border-slate-200 p-6">
+        <h3 class="font-semibold mb-2">What you get</h3>
+        <ul class="list-disc pl-6 space-y-1 text-slate-700 text-sm">
+          <li>10 scroll‑stopping hooks</li>
+          <li>Captions in your voice</li>
+          <li>Hashtags + 7‑day plan</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mt-10 grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl shadow bg-white border border-slate-200 p-6">
+        <h3 class="text-xl font-bold">Free</h3>
+        <p class="mt-1 text-slate-600">3 packs/day — TikTok & Instagram</p>
+        <a id="tryFreePricing" class="btn bg-white text-slate-900 border border-slate-300 hover:bg-slate-100 mt-4 w-full" href="#" target="_blank" rel="noopener">Try Free</a>
+      </div>
+      <div class="rounded-2xl shadow bg-white border border-slate-200 p-6">
+        <h3 class="text-xl font-bold">Pro</h3>
+        <p class="mt-1 text-slate-600">50 packs/day — All platforms</p>
+        <div class="text-3xl font-extrabold mt-1">$19<span class="text-base font-medium text-slate-600">/mo</span></div>
+        <div class="text-sm text-slate-600">or $180/yr</div>
+        <a id="upgradePricing" class="btn bg-blue-600 text-white hover:bg-blue-700 mt-4 w-full" href="#" target="_blank" rel="noopener">Upgrade to Pro</a>
+      </div>
+    </section>
+
+    <footer class="mt-12 text-sm text-slate-500 flex items-center justify-between">
+      <div>© <span id="year"></span> TrendForge AI</div>
+      <div class="flex items-center gap-3">
+        <a id="tryFreeFooter" class="hover:underline" href="#" target="_blank" rel="noopener">Try Free</a>
+        <a id="upgradeFooter" class="hover:underline" href="#" target="_blank" rel="noopener">Upgrade to Pro</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Link wiring: set your URLs here -->
+  <script>
+    // 1) Replace these with your real URLs (keep the quotes)
+    const APP_URL = "trendforge-ai-fvt6wnejp7sjlwnr7qnhqu"; // your Streamlit app
+    const CHECKOUT_URL = "https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5"; // LemonSqueezy test checkout
+
+    // 2) Wire every Free/Pro button
+    const map = {
+      tryFreeTop: APP_URL,
+      tryFreeHero: APP_URL,
+      tryFreePricing: APP_URL,
+      tryFreeFooter: APP_URL,
+      upgradeTop: CHECKOUT_URL,
+      upgradeHero: CHECKOUT_URL,
+      upgradePricing: CHECKOUT_URL,
+      upgradeFooter: CHECKOUT_URL,
+    };
+
+    for (const [id, url] of Object.entries(map)) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      if (!url || url === "#") {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          alert('Link not set yet. Edit APP_URL / CHECKOUT_URL at the bottom of index.html.');
+        });
+      } else {
+        el.href = url;
+        el.target = "_blank";
+        el.rel = "noopener";
+      }
+    }
+
+    // 3) Diagnostics (helps if Free seems not to work)
+    console.log('[TrendForge] APP_URL:', APP_URL);
+    console.log('[TrendForge] CHECKOUT_URL:', CHECKOUT_URL);
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
