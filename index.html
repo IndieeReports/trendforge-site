@@ -17,8 +17,9 @@
         <h1 class="text-2xl font-bold">TrendForge AI</h1>
       </div>
       <nav class="hidden md:flex items-center gap-3">
-        <a id="tryFreeTop" class="btn bg-white text-slate-900 border border-slate-300 hover:bg-slate-100" href="#" target="_blank" rel="noopener">Try Free</a>
-        <a id="upgradeTop" class="btn bg-blue-600 text-white hover:bg-blue-700" href="#" target="_blank" rel="noopener">Upgrade to Pro</a>
+       <a class="btn btn-secondary" href="https://trendforge-ai-fvt6wnejp7sjlwnr7qnhqu.streamlit.app" target="_blank" rel="noopener">Try Free</a>
+       <a class="btn btn-primary" href="https://YOUR-STORE.lemonsqueezy.com/checkout/buy/XXXX?mode=test" target="_blank" rel="noopener">Upgrade to Pro</a>
+
       </nav>
     </header>
 
@@ -27,8 +28,9 @@
         <h2 class="text-3xl md:text-4xl font-extrabold leading-tight">Make a Week of Social Posts in Seconds</h2>
         <p class="mt-4 text-lg text-slate-700">Hooks, captions, hashtags + a 7‑day plan — ready to post.</p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a id="tryFreeHero" class="btn bg-blue-600 text-white hover:bg-blue-700" href="#" target="_blank" rel="noopener">Try Free</a>
-          <a id="upgradeHero" class="btn bg-white text-slate-900 border border-slate-300 hover:bg-slate-100" href="#" target="_blank" rel="noopener">Upgrade to Pro</a>
+      <a class="btn btn-primary" href="https://trendforge-ai-fvt6wnejp7sjlwnr7qnhqu.streamlit.app" target="_blank" rel="noopener">Try Free</a>
+      <a class="btn btn-secondary" href="https://YOUR-STORE.lemonsqueezy.com/checkout/buy/XXXX?mode=test" target="_blank" rel="noopener">Upgrade to Pro</a>
+
         </div>
       </div>
       <div class="rounded-2xl shadow bg-white border border-slate-200 p-6">
@@ -45,14 +47,14 @@
       <div class="rounded-2xl shadow bg-white border border-slate-200 p-6">
         <h3 class="text-xl font-bold">Free</h3>
         <p class="mt-1 text-slate-600">3 packs/day — TikTok & Instagram</p>
-        <a id="tryFreePricing" class="btn bg-white text-slate-900 border border-slate-300 hover:bg-slate-100 mt-4 w-full" href="#" target="_blank" rel="noopener">Try Free</a>
+     <a class="btn btn-secondary w-full" href="https://trendforge-ai-fvt6wnejp7sjlwnr7qnhqu.streamlit.app" target="_blank" rel="noopener">Try Free</a>
       </div>
       <div class="rounded-2xl shadow bg-white border border-slate-200 p-6">
         <h3 class="text-xl font-bold">Pro</h3>
         <p class="mt-1 text-slate-600">50 packs/day — All platforms</p>
         <div class="text-3xl font-extrabold mt-1">$19<span class="text-base font-medium text-slate-600">/mo</span></div>
         <div class="text-sm text-slate-600">or $180/yr</div>
-        <a id="upgradePricing" class="btn bg-blue-600 text-white hover:bg-blue-700 mt-4 w-full" href="#" target="_blank" rel="noopener">Upgrade to Pro</a>
+      <a class="btn btn-primary w-full" href="https://YOUR-STORE.lemonsqueezy.com/checkout/buy/XXXX?mode=test" target="_blank" rel="noopener">Upgrade to Pro</a>
       </div>
     </section>
 
@@ -66,51 +68,3 @@
   </main>
 
  <!-- Link wiring: set your URLs here -->
-<script>
-// 1) Replace these with your real URLs (keep the quotes)
-const APP_URL = "https://trendforge-ai-fvt6wnejp7sjlwnr7qnhqu.streamlit.app"; // your Streamlit app
-const CHECKOUT_URL = "https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5"; // LemonSqueezy (test for now)
-
-// 2) Normalize and wire every Free/Pro button
-function normalizeUrl(u, isApp=false){
-  if(!u) return "";
-  u = String(u).trim();
-  if(/^https?:\/\//i.test(u)) return u; // already full URL
-  if (isApp && !u.includes(".")) u = u + ".streamlit.app"; // allow subdomain-only app URLs
-  return "https://" + u;
-}
-
-const map = {
-  tryFreeTop: normalizeUrl(APP_URL, true),
-  tryFreeHero: normalizeUrl(APP_URL, true),
-  tryFreePricing: normalizeUrl(APP_URL, true),
-  tryFreeFooter: normalizeUrl(APP_URL, true),
-  upgradeTop: normalizeUrl(CHECKOUT_URL),
-  upgradeHero: normalizeUrl(CHECKOUT_URL),
-  upgradePricing: normalizeUrl(CHECKOUT_URL),
-  upgradeFooter: normalizeUrl(CHECKOUT_URL),
-};
-
-for (const [id, url] of Object.entries(map)) {
-  const el = document.getElementById(id);
-  if (!el) continue;
-  if (!url) {
-    el.addEventListener('click', (e) => {
-      e.preventDefault();
-      alert('Link not set. Edit APP_URL / CHECKOUT_URL at the bottom of index.html.');
-    });
-  } else {
-    el.href = url;
-    el.target = "_blank";
-    el.rel = "noopener";
-  }
-}
-
-// 3) Diagnostics (for quick checks in DevTools console)
-console.log('[TrendForge] APP_URL:', normalizeUrl(APP_URL, true));
-console.log('[TrendForge] CHECKOUT_URL:', normalizeUrl(CHECKOUT_URL));
-
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
