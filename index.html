@@ -81,7 +81,7 @@
   <header>
     <div class="wrap header-inner">
       <a class="brand" href="#">
-        <!-- Inline SVG logo (change fill to recolor) -->
+        <!-- Inline SVG logo (change fill color) -->
         <svg class="logo" viewBox="0 0 24 24" fill="#2563eb" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M12 2l2.39 4.84L20 8.27l-4 3.9.94 5.49L12 15.77 7.06 17.66 8 12.17 4 8.27l5.61-1.43L12 2z"/>
         </svg>
@@ -103,13 +103,12 @@
         <h1 class="h1">Get 3 Free Content Packs</h1>
         <p class="lead">Instant ideas for TikTok & Instagram + weekly creator tips. No spam, unsubscribe anytime.</p>
         <div class="cta">
-          <!-- TODO: replace with your free/demo URL -->
-          <a class="btn btn-ghost" href="<!-- TODO_FREE_URL -->" id="try-free-top">Try Free</a>
-          <!-- TODO: replace with your checkout URL -->
-          <a class="btn btn-primary" href="<!-- TODO_CHECKOUT_URL -->" id="upgrade-top">Upgrade to Pro — $19</a>
+          <!-- DEFAULT (works now): scrolls to features. Replace with your real link later -->
+          <a class="btn btn-ghost" href="https://trendforge-ai-fvt6wnejp7sjlwnr7qnhqu.streamlit.app" id="try-free-top">Try Free</a>
+          <!-- DEFAULT (works now): scrolls to pricing. Replace with your checkout link later -->
+          <a class="btn btn-primary" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5" id="upgrade-top">Upgrade to Pro — $19</a>
         </div>
       </div>
-      <!-- Tasteful visual (royalty-free placeholder) -->
       <div class="hero-visual">
         <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1400&auto=format&fit=crop" alt="Creator workspace with laptop and notes" loading="lazy">
       </div>
@@ -150,8 +149,8 @@
             <li>3 starter content packs</li>
             <li>Weekly creator tips</li>
           </ul>
-          <!-- TODO: free link -->
-          <a class="btn btn-ghost" href="https://trendforge-ai-fvt6wnejp7sjlwnr7qnhqu.streamlit.app" id="try-free-mid">Try Free</a>
+          <!-- DEFAULT: scroll to features; replace with your real free/demo URL later -->
+          <a class="btn btn-ghost" href="#features" id="try-free-mid">Try Free</a>
         </div>
         <div class="card" style="border-color:#c7d2fe">
           <h3>Pro</h3>
@@ -162,8 +161,8 @@
             <li>Early feature access</li>
             <li>Priority support</li>
           </ul>
-          <!-- ✅ Pro button now works — just add your checkout URL -->
-          <a class="btn btn-primary" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5" id="upgrade-mid">Upgrade to Pro</a>
+          <!-- DEFAULT: scroll to pricing; replace with your real checkout link later -->
+          <a class="btn btn-primary" href="#pricing" id="upgrade-mid">Upgrade to Pro</a>
         </div>
       </div>
     </section>
@@ -191,7 +190,6 @@
       <p>Instant ideas for TikTok & Instagram + weekly creator tips.</p>
 
       <!-- Mailchimp embed (fill later). Keeps structure ready. -->
-      <!-- TODO: Replace action, u, id when your Mailchimp is ready -->
       <form action="<!-- TODO_MAILCHIMP_ACTION_URL -->" method="post" target="_blank" novalidate id="mc-form">
         <input type="hidden" name="u" value="<!-- TODO_U -->">
         <input type="hidden" name="id" value="<!-- TODO_ID -->">
@@ -212,10 +210,10 @@
 
     // ===== POPUP TOGGLE =====
     // Flip to true when you have Mailchimp action/u/id in place.
-    const ENABLE_POPUP = false; // <<<<<<<<<<<<<<<<<<  TOGGLE LATER
+    const ENABLE_POPUP = false; // stays off for now
 
-    const TRY_FREE_IDS = ['try-free-top','try-free-mid'];  // which buttons should open popup
-    const UPGRADE_IDS  = ['upgrade-top','upgrade-mid'];    // upgrade buttons (go to checkout directly)
+    const TRY_FREE_IDS = ['try-free-top','try-free-mid'];  // which buttons could open popup
+    const UPGRADE_IDS  = ['upgrade-top','upgrade-mid'];    // upgrade buttons
 
     if (ENABLE_POPUP) {
       const popup = document.getElementById('popup');
