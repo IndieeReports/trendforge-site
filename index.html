@@ -1,91 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TrendForge AI</title>
+
+  <!-- ============ THEME (edit colors/fonts here) ============ -->
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;a
-      background: #f9fafb;
-      color: #0f172a;
+    :root{
+      --bg:#0b0f14; --ink:#e9f1f8; --muted:#9fb1c6;
+      --card:#121821; --line:#243143; --accent:#2e8cff; --accent-2:#6ee7b7;
     }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 32px;
-      background: white;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    header h1 {
-      font-size: 20px;
-      margin: 0;
-    }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 16px;
-    }
-    h2 {
-      margin-top: 0;
-    }
-    .card {
-      background: white;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      padding: 24px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    footer {
-      margin-top: 60px;
-      text-align: center;
-      font-size: 14px;
-      color: #64748b;
-      padding: 20px;
-    }
+    *{box-sizing:border-box}
+    body{margin:0;background:#f9fafb;color:#0f172a;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+    a{color:inherit}
+    /* header */
+    header{background:#fff;border-bottom:1px solid #e2e8f0}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{font-weight:800}
+    nav a{color:#64748b;text-decoration:none;margin-left:14px}
+    nav a:hover{color:#0f172a}
+    /* hero */
+    .hero{padding:40px 0}
+    .h1{font-size:clamp(28px,4vw,44px);margin:0 0 10px}
+    .lead{color:#64748b;margin:0 0 18px}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{border:0;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-ghost{background:#e8f0ff;color:#0f172a}
+    /* sections/cards */
+    section.block{padding:32px 0;border-top:1px solid #e2e8f0}
+    .card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:22px;box-shadow:0 6px 24px rgba(0,0,0,.06)}
+    /* pricing */
+    .pricing{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media (max-width:800px){.pricing{grid-template-columns:1fr}}
+    .price{font-size:28px;font-weight:800}
+    /* footer */
+    footer{padding:24px 0;color:#64748b;text-align:center;border-top:1px solid #e2e8f0;margin-top:40px}
+
+    /* ============ POPUP (Mailchimp) ============ */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:9999}
+    .modal{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;max-width:520px;width:92%;padding:20px;box-shadow:0 18px 60px rgba(0,0,0,.45)}
+    .modal h3{margin:0 0 6px}
+    .modal p{margin:0 0 12px;color:var(--muted)}
+    .modal .close{position:absolute;right:10px;top:10px;background:transparent;border:0;color:#cbd5e1;font-size:24px;cursor:pointer}
+    .mc-input{width:100%;padding:12px;border-radius:12px;border:1px solid #2b3a4e;background:#0e1520;color:#eaf1f7;margin-bottom:10px}
+    .mc-button{width:100%;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer}
+    .mini{font-size:12px;color:#a5b4c8;margin-top:8px}
+    .successbox{border:2px solid var(--accent);background:#0f1726;border-radius:12px;padding:12px;margin-top:10px}
   </style>
 </head>
 <body>
-
   <header>
-    <h1>TrendForge AI</h1>
-    <nav>
-      <a href="#features">Features</a> |
-      <a href="#pricing">Pricing</a> |
-      <a href="#faq">FAQ</a>
-    </nav>
+    <div class="wrap header-inner">
+      <div class="brand">TrendForge AI</div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Get 3 Free Content Packs</h2>
-      <p>Instant ideas for TikTok & Instagram + weekly creator tips. No spam, unsubscribe anytime.</p>
+  <main class="wrap">
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="features">
+      <h1 class="h1">Get 3 Free Content Packs</h1>
+      <p class="lead">Instant ideas for TikTok & Instagram + weekly creator tips. No spam, unsubscribe anytime.</p>
+      <div class="cta">
+        <!-- TODO: put your real free app/demo link -->
+        <a class="btn btn-ghost" href="<!-- TODO_FREE_URL -->" id="try-free-top">Try Free</a>
+        <!-- TODO: put your real checkout link -->
+        <a class="btn btn-primary" href="<!-- TODO_CHECKOUT_URL -->" id="upgrade-top">Upgrade to Pro</a>
+      </div>
     </section>
 
-    <section class="card">
-      <h3>Join the Newsletter</h3>
-      <p>Sign up below to get your free packs and weekly AI-powered growth tips.</p>
-
-      <!-- Clean MailerLite embed -->
-      <script async src="https://assets.mlcdn.com/ml-subscribe.js"></script>
-      <div class="ml-form-embed" data-account="1737902" data-form="162827252657030457"></div>
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="block" id="how">
+      <div class="card">
+        <h2>How it works</h2>
+        <ol style="margin-left:18px;color:#64748b">
+          <li>Try the free pack to see how ideas are generated</li>
+          <li>Confirm your email to unlock weekly tips</li>
+          <li>Upgrade to Pro for unlimited packs & early features</li>
+        </ol>
+      </div>
     </section>
 
-    <section id="faq" style="margin-top:40px;">
-      <h3>FAQ</h3>
-      <p><strong>Is the content mine to use?</strong> Yes — you can use it anywhere.</p>
+    <!-- ===== PRICING ===== -->
+    <section class="block" id="pricing">
+      <h2>Pricing</h2>
+      <div class="pricing">
+        <div class="card">
+          <h3>Free</h3>
+          <p class="price">$0</p>
+          <ul style="color:#64748b;margin-left:18px">
+            <li>3 starter content packs</li>
+            <li>Weekly creator tips</li>
+          </ul>
+          <a class="btn btn-ghost" href="<!-- TODO_FREE_URL -->" id="try-free-mid">Try Free</a>
+        </div>
+        <div class="card">
+          <h3>Pro</h3>
+          <p class="price">$9<span style="font-size:16px">/mo</span></p>
+          <ul style="color:#64748b;margin-left:18px">
+            <li>Unlimited content packs</li>
+            <li>Advanced templates</li>
+            <li>Early feature access</li>
+          </ul>
+          <a class="btn btn-primary" href="<!-- TODO_CHECKOUT_URL -->" id="upgrade-mid">Upgrade to Pro</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="block" id="faq">
+      <div class="card">
+        <h2>FAQ</h2>
+        <p><strong>Is the content mine to use?</strong> Yes — you can use it anywhere.</p>
+      </div>
     </section>
   </main>
 
   <footer>
-    &copy; <span id="year"></span> TrendForge AI — All rights reserved.
+    © <span id="y"></span> TrendForge AI — All rights reserved.
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <!-- ============ EMAIL POPUP (Mailchimp) ============ -->
+  <div class="modal-backdrop" id="popup">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mc-title">
+      <button class="close" title="Close" aria-label="Close" id="close-popup">×</button>
+      <h3 id="mc-title">Get 3 Free Content Packs</h3>
+      <p>Instant ideas for TikTok & Instagram + weekly creator tips.</p>
 
+      <!-- ✅ MAILCHIMP EMBED (classic post form, no keys) -->
+      <!-- TODO: Replace the ACTION URL with your Mailchimp "embedded form" action.
+           It looks like: https://xxxxxx.usX.list-manage.com/subscribe/post?u=YOUR_U&id=YOUR_ID  -->
+      <form action="<!-- TODO_MAILCHIMP_ACTION_URL -->" method="post" target="_blank" novalidate id="mc-form">
+        <!-- These hidden inputs are required by Mailchimp; copy from your embed code. -->
+        <!-- TODO: Replace the values for u and id with yours -->
+        <input type="hidden" name="u" value="<!-- TODO_U -->">
+        <input type="hidden" name="id" value="<!-- TODO_ID -->">
+
+        <input class="mc-input" type="email" name="EMAIL" placeholder="Your email" required>
+        <label class="mini"><input type="checkbox" required> I agree to receive emails from TrendForge AI.</label>
+        <button class="mc-button" type="submit">Send me the free packs</button>
+
+        <div id="mc-success" class="successbox" style="display:none">✅ Thanks — check your inbox!</div>
+      </form>
+
+      <p class="mini">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // --- POPUP logic ---
+    const popup = document.getElementById('popup');
+    const closeBtn = document.getElementById('close-popup');
+
+    // Show after delay OR when clicking "Try Free"
+    const showPopup = () => { popup.style.display = 'flex'; };
+    const hidePopup = () => { popup.style.display = 'none'; };
+
+    // Delay (5s)
+    const timer = setTimeout(showPopup, 5000);
+
+    // Open on "Try Free" buttons, too
+    ['try-free-top','try-free-mid'].forEach(id=>{
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('click', (e)=>{ e.preventDefault(); showPopup(); });
+    });
+
+    // Close handlers
+    closeBtn.addEventListener('click', hidePopup);
+    popup.addEventListener('click', (e)=>{ if (e.target===popup) hidePopup(); });
+
+    // Optional: show success message after Mailchimp redirect returns to page with #success
+    if (location.hash === '#mc-success') {
+      showPopup();
+      document.getElementById('mc-success').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
