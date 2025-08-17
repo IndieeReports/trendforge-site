@@ -6,23 +6,21 @@
   <title>TrendForge AI</title>
   <meta name="description" content="AI-powered content packs and weekly creator tips." />
 
-
-
-
   <!-- Social share (Open Graph / Twitter) -->
-<meta property="og:title" content="TrendForge AI">
-<meta property="og:description" content="AI-powered content packs + weekly creator tips.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1200&auto=format&fit=crop">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://YOUR-DOMAIN.com"> <!-- optional if you have a domain -->
-<meta name="twitter:card" content="summary_large_image">
+  <meta property="og:title" content="TrendForge AI">
+  <meta property="og:description" content="AI-powered content packs + weekly creator tips.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1200&auto=format&fit=crop">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR-DOMAIN.com">
+  <meta name="twitter:card" content="summary_large_image">
 
-<!-- Optional favicon / theme color -->
-<link rel="icon" href="https://fav.farm/⚡">
-<meta name="theme-color" content="#2563eb">
+  <!-- Optional favicon / theme color -->
+  <link rel="icon" href="https://fav.farm/⚡">
+  <meta name="theme-color" content="#2563eb">
 
+  <!-- Mailchimp Connected Site (keep for analytics, not relied on for popup timing) -->
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ef65a90b3f06a47cb74275125/9125aa35a66b9817b8290e185.js");</script>
 
-    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ef65a90b3f06a47cb74275125/9125aa35a66b9817b8290e185.js");</script>
   <!-- ===== Theme & base styles ===== -->
   <style>
     :root{
@@ -50,8 +48,6 @@
     .logo{width:28px; height:28px}
     nav a{color:var(--muted); margin-left:16px}
     nav a:hover{color:var(--ink)}
-
-    
 
     /* Hero */
     .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center; padding:40px 0}
@@ -83,16 +79,14 @@
     /* Footer */
     footer{padding:28px 0; color:var(--muted); text-align:center; border-top:1px solid var(--line); margin-top:40px}
 
-    /* Popup (Mailchimp later) */
-    .modal-backdrop{position:fixed; inset:0; background:rgba(2,6,23,.5); display:none; align-items:center; justify-content:center; z-index:9999}
-    .modal{background:#0b1220; color:#e6edf8; border:1px solid #22314a; border-radius:16px; max-width:520px; width:92%; padding:20px; box-shadow:0 30px 100px rgba(0,0,0,.45); position:relative}
-    .modal h3{margin:0 0 6px}
-    .modal p{margin:0 0 12px; color:#a8b3c7}
-    .modal .close{position:absolute; right:10px; top:10px; background:transparent; border:0; color:#cbd5e1; font-size:24px; cursor:pointer}
-    .mc-input{width:100%; padding:12px; border-radius:12px; border:1px solid #2b3a4e; background:#0e1520; color:#eaf1f7; margin-bottom:10px}
-    .mc-button{width:100%; background:var(--accent); color:#fff; border:0; border-radius:12px; padding:12px 16px; font-weight:700; cursor:pointer}
-    .mini{font-size:12px; color:#a5b4c8; margin-top:8px}
-    .successbox{border:2px solid var(--accent); background:#0f1726; border-radius:12px; padding:12px; margin-top:10px}
+    /* === Instant popup styles === */
+    .tf-backdrop{position:fixed;inset:0;background:rgba(2,6,23,.55);display:none;align-items:center;justify-content:center;z-index:9999}
+    .tf-modal{background:#0b1220;color:#e6edf8;border:1px solid #22314a;border-radius:16px;max-width:520px;width:92%;padding:20px;box-shadow:0 30px 100px rgba(0,0,0,.45);position:relative}
+    .tf-close{position:absolute;right:10px;top:10px;background:transparent;border:0;color:#cbd5e1;font-size:24px;cursor:pointer}
+    .tf-input{width:100%;padding:12px;border-radius:12px;border:1px solid #2b3a4e;background:#0e1520;color:#eaf1f7;margin:10px 0}
+    .tf-btn{width:100%;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer}
+    .tf-mini{font-size:12px;color:#a5b4c8;margin-top:8px;display:block}
+    .tf-success{border:2px solid var(--accent);background:#0f1726;border-radius:12px;padding:10px;margin-top:10px}
   </style>
 </head>
 <body>
@@ -100,7 +94,7 @@
   <header>
     <div class="wrap header-inner">
       <a class="brand" href="#">
-        <!-- Inline SVG logo (change fill color) -->
+        <!-- Inline SVG logo -->
         <svg class="logo" viewBox="0 0 24 24" fill="#2563eb" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M12 2l2.39 4.84L20 8.27l-4 3.9.94 5.49L12 15.77 7.06 17.66 8 12.17 4 8.27l5.61-1.43L12 2z"/>
         </svg>
@@ -122,9 +116,9 @@
         <h1 class="h1">Get 3 Free Content Packs</h1>
         <p class="lead">Instant ideas for TikTok & Instagram + weekly creator tips. No spam, unsubscribe anytime.</p>
         <div class="cta">
-          <!-- DEFAULT (works now): scrolls to features. Replace with your real link later -->
-          <a class="btn btn-ghost" href="https://trendforge-ai-fvt6wnejp7sjlwnr7qnhqu.streamlit.app" id="try-free-top">Try Free</a>
-          <!-- DEFAULT (works now): scrolls to pricing. Replace with your checkout link later -->
+          <!-- Try Free opens popup -->
+          <a class="btn btn-ghost" href="#" id="try-free-top">Try Free</a>
+          <!-- Upgrade (keep your real checkout link) -->
           <a class="btn btn-primary" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5" id="upgrade-top">Upgrade to Pro — $19</a>
         </div>
       </div>
@@ -168,8 +162,7 @@
             <li>3 starter content packs</li>
             <li>Weekly creator tips</li>
           </ul>
-          <!-- DEFAULT: scroll to features; replace with your real free/demo URL later -->
-          <a class="btn btn-ghost" href="#features" id="try-free-mid">Try Free</a>
+          <a class="btn btn-ghost" href="#" id="try-free-mid">Try Free</a>
         </div>
         <div class="card" style="border-color:#c7d2fe">
           <h3>Pro</h3>
@@ -180,8 +173,7 @@
             <li>Early feature access</li>
             <li>Priority support</li>
           </ul>
-          <!-- DEFAULT: scroll to pricing; replace with your real checkout link later -->
-          <a class="btn btn-primary" href="#pricing" id="upgrade-mid">Upgrade to Pro</a>
+          <a class="btn btn-primary" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5" id="upgrade-mid">Upgrade to Pro</a>
         </div>
       </div>
     </section>
@@ -201,9 +193,60 @@
     © <span id="y"></span> TrendForge AI — All rights reserved.
   </footer>
 
+  <!-- === Instant popup (submits to Mailchimp Embedded Form) === -->
+  <div class="tf-backdrop" id="tf-popup" aria-hidden="true">
+    <div class="tf-modal" role="dialog" aria-label="Get Early Access">
+      <button class="tf-close" id="tf-close" aria-label="Close">×</button>
+      <h3>Get Early Access to TrendForge AI</h3>
+      <p>Join FREE today — get your first content pack on us.</p>
 
+      <!-- 🔧 Replace these three values with your Mailchimp Embedded-form values -->
+      <form id="tf-form"
+            action="https://YOUR-DATACENTER.list-manage.com/subscribe/post"
+            method="post" target="_blank" novalidate>
+        <input type="hidden" name="u" value="YOUR_U_VALUE">
+        <input type="hidden" name="id" value="YOUR_ID_VALUE">
+
+        <input class="tf-input" type="email" name="EMAIL" placeholder="Your email address" required>
+        <label class="tf-mini"><input type="checkbox" required> I agree to receive emails from TrendForge AI.</label>
+        <button class="tf-btn" type="submit">Send me the free packs</button>
+
+        <div class="tf-success" id="tf-success" style="display:none">
+          ✅ Thanks — check your inbox!
+        </div>
+      </form>
+
+      <p class="tf-mini">No spam. Unsubscribe anytime.</p>
+    </div>
   </div>
 
- 
+  <!-- Minimal scripts -->
+  <script>
+    // Year in footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Popup wiring
+    const OPEN_IDS = ['try-free-top','try-free-mid'];
+    const popup = document.getElementById('tf-popup');
+    const closeBtn = document.getElementById('tf-close');
+    const successBox = document.getElementById('tf-success');
+
+    function openPopup(e){ if(e) e.preventDefault(); successBox.style.display='none'; popup.style.display='flex'; popup.setAttribute('aria-hidden','false'); }
+    function closePopup(){ popup.style.display='none'; popup.setAttribute('aria-hidden','true'); }
+
+    OPEN_IDS.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.addEventListener('click', openPopup);
+    });
+
+    closeBtn.addEventListener('click', closePopup);
+    popup.addEventListener('click', (e)=>{ if(e.target===popup) closePopup(); });
+
+    // Show quick success after submit (real Mailchimp submit goes in new tab due to target=_blank)
+    document.getElementById('tf-form').addEventListener('submit', ()=>{
+      successBox.style.display='block';
+      setTimeout(closePopup, 1500);
+    });
+  </script>
 </body>
 </html>
