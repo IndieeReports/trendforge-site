@@ -6,39 +6,37 @@
   <title>TrendForge AI</title>
   <meta name="description" content="AI-powered content packs and weekly creator tips." />
 
-  <!-- Social share -->
+  <!-- Social share (Open Graph / Twitter) -->
   <meta property="og:title" content="TrendForge AI">
   <meta property="og:description" content="AI-powered content packs + weekly creator tips.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1200&auto=format&fit=crop">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://indieereports.github.io/trendforge-site/">
+  <meta property="og:url" content="https://YOUR-DOMAIN.com">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Favicon / theme -->
+  <!-- Favicon / theme color -->
   <link rel="icon" href="https://fav.farm/⚡">
   <meta name="theme-color" content="#2563eb">
 
-  <!-- (Optional) Mailchimp connected-site snippet; fine to keep -->
+  <!-- Mailchimp Connected Site (analytics only; safe to keep) -->
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ef65a90b3f06a47cb74275125/9125aa35a66b9817b8290e185.js");</script>
 
+  <!-- ===== Site styles ===== -->
   <style>
     :root{
-      --bg:#0b0f14;      /* dark bg for accents */
-      --paper:#ffffff;   /* cards / page */
-      --ink:#0f172a;     /* main text */
-      --muted:#64748b;   /* secondary text */
-      --line:#e2e8f0;    /* borders */
-      --accent:#2563eb;  /* primary blue */
-      --accent-2:#22c55e;/* secondary green */
-      --radius:16px;
+      --bg:#0b0f14;
+      --paper:#ffffff;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --accent:#2563eb;
+      --accent-2:#22c55e;
+      --radius:14px;
       --shadow:0 10px 30px rgba(2,6,23,.06);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
-    body{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--ink); background:#f8fafc;
-    }
+    body{font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); background:#f8fafc}
     img{max-width:100%; display:block}
     a{color:inherit; text-decoration:none}
     .wrap{max-width:1100px; margin:0 auto; padding:0 18px}
@@ -58,10 +56,10 @@
     .lead{color:var(--muted); margin:0 0 18px}
     .cta{display:flex; gap:12px; flex-wrap:wrap}
     .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 16px; border-radius:12px; font-weight:700; border:1px solid transparent; cursor:pointer}
-    .btn-ghost{background:#eef2ff; color:var(--ink); border-color:#c7d2fe}
-    .btn-ghost:hover{background:#e0e7ff}
     .btn-primary{background:var(--accent); color:#fff}
     .btn-primary:hover{filter:brightness(1.05)}
+    .btn-ghost{background:#eef2ff; color:var(--ink); border-color:#c7d2fe}
+    .btn-ghost:hover{background:#e0e7ff}
     .hero-visual{border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line)}
 
     /* Sections */
@@ -81,32 +79,30 @@
     /* Footer */
     footer{padding:28px 0; color:var(--muted); text-align:center; border-top:1px solid var(--line); margin-top:40px}
 
-    /* ===== Email catcher (modern + matches site) ===== */
-    .catch{margin:34px 0 10px}
-    .catch .mini{color:var(--muted); font-size:13px; margin-bottom:10px}
-    .catch-wrap{
-      background:linear-gradient(180deg,#0b1220,#0e1729);
-      color:#e6edf8; border:1px solid #22314a;
-      border-radius:20px; padding:18px; box-shadow:0 30px 100px rgba(0,0,0,.25); max-width:640px;
+    /* ===== Embedded form (Mailchimp) — custom theme ===== */
+    .signup-wrap{margin-top:10px}
+    .signup-title{font-weight:800; font-size:20px; margin:0 0 4px}
+    .signup-sub{color:var(--muted); margin:0 0 12px}
+    .mc-card{background:#0b1220; color:#e6edf8; border:1px solid #22314a; border-radius:16px; padding:18px; box-shadow:0 30px 100px rgba(2,6,23,.25)}
+    /* override Mailchimp defaults */
+    #mc_embed_signup form{padding:0; font-family:inherit; color:inherit; background:transparent}
+    #mc_embed_signup .mc-field-group label{display:none}
+    #mc_embed_signup .mc-field-group input{width:100%; padding:12px 14px; border-radius:12px; border:1px solid #2b3a4e; background:#0e1520; color:#eaf1f7; outline:none}
+    #mc_embed_signup .mc-field-group input:focus{border-color:#3b82f6; box-shadow:0 0 0 3px rgba(59,130,246,.25)}
+    #mc_embed_signup .button{
+      width:100%; margin-top:10px; border:0; border-radius:12px; padding:12px 16px; font-weight:800; cursor:pointer; color:#fff;
+      background: linear-gradient(90deg,#3b82f6, #22c55e 65%, #a855f7 100%);
     }
-    .catch label{font-size:13px; color:#9fb0c8; display:block; margin-bottom:8px}
-    .catch input[type="email"]{
-      width:100%; padding:12px 14px; border-radius:12px;
-      background:#0e1520; color:#eaf1f7; border:1px solid #2b3a4e; outline:none;
-    }
-    .agree{display:flex; align-items:center; gap:8px; margin:10px 0; font-size:13px; color:#a9b6cc}
-    .btn-gradient{
-      width:100%; padding:12px 16px; border-radius:12px; font-weight:800; border:0; color:#fff; cursor:pointer;
-      background:linear-gradient(90deg,#22c55e 0%, #10b981 35%, #3b82f6 100%);
-      transition:transform .05s ease;
-    }
-    .btn-gradient:hover{transform:translateY(-1px)}
-    .fine{font-size:12px; color:#9fb0c8; margin-top:10px}
-    .success{display:none; margin-top:10px; border:1px solid #334155; background:#0f1726; padding:10px; border-radius:12px}
+    #mc_embed_signup .indicates-required{display:none}
+    #mc_embed_signup .helper_text{display:none}
+    #mc_embed_signup #mce-responses{margin-top:10px}
+    .mc-consent{display:flex; gap:8px; align-items:flex-start; color:#a5b4c8; font-size:13px; margin-top:10px}
+    .mc-consent input{transform:translateY(2px)}
+    .mc-mini{font-size:12px; color:#a5b4c8; margin-top:8px}
   </style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- ===== Header ===== -->
   <header>
     <div class="wrap header-inner">
       <a class="brand" href="#">
@@ -119,13 +115,13 @@
         <a href="#features">Features</a>
         <a href="#how">How it works</a>
         <a href="#pricing">Pricing</a>
-        <a href="#signup">Get early access</a>
+        <a href="#faq">FAQ</a>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <!-- Hero -->
+    <!-- ===== Hero ===== -->
     <section class="hero" id="features">
       <div>
         <h1 class="h1">Get 3 Free Content Packs</h1>
@@ -140,7 +136,7 @@
       </div>
     </section>
 
-    <!-- Value props -->
+    <!-- ===== Value props ===== -->
     <section class="block" id="how">
       <h2 class="section-title">What you get</h2>
       <p class="section-sub">Concrete ideas + a simple plan so you can post faster and grow.</p>
@@ -148,52 +144,74 @@
         <div class="card">
           <span class="pill">Weekly</span>
           <h3>Fresh content packs</h3>
-          <p class="lead" style="color:var(--muted)">10–20 prompts tuned for your niche, with hooks and CTAs that are trending now.</p>
+          <p class="lead">10–20 prompts tuned for your niche, with hooks and CTAs that are trending now.</p>
         </div>
         <div class="card">
           <span class="pill">Actionable</span>
           <h3>3-step posting plan</h3>
-          <p class="lead" style="color:var(--muted)">Exactly what to post, how to film, and captions that convert.</p>
+          <p class="lead">Exactly what to post, how to film, and captions that convert.</p>
         </div>
         <div class="card">
           <span class="pill">Bonus</span>
           <h3>Creator growth tips</h3>
-          <p class="lead" style="color:var(--muted)">Short weekly wins: idea angles, analytics moves, and offer ideas.</p>
+          <p class="lead">Short weekly wins: idea angles, analytics moves, and offer ideas.</p>
         </div>
       </div>
     </section>
 
-    <!-- Email catcher (Mailchimp embed + instant redirect) -->
-    <section class="block catch" id="signup">
+    <!-- ===== Embedded signup (Mailchimp) ===== -->
+    <section class="block" id="signup">
       <h2 class="section-title">Get early access + 3 free packs</h2>
-      <p class="mini">No spam. Unsubscribe anytime.</p>
+      <p class="section-sub">No spam. Unsubscribe anytime.</p>
 
-      <div class="catch-wrap">
-        <form id="mc-form"
-              action="https://app.us17.list-manage.com/subscribe/post?u=ef65a90b3f06a47cb74275125&amp;id=53eaf47b7c&amp;f_id=002de2e3f0"
-              method="post" target="_blank" novalidate>
-          <label for="mce-EMAIL">Email address *</label>
-          <input type="email" name="EMAIL" id="mce-EMAIL" required placeholder="you@example.com">
+      <div class="mc-card signup-wrap">
+        <!-- Mailchimp embed code (kept intact, just restyled) -->
+        <div id="mc_embed_shell">
+          <!-- Their base stylesheet (safe to load) -->
+          <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
 
-          <label class="agree">
-            <input type="checkbox" required>
-            I agree to receive emails from TrendForge AI.
-          </label>
+          <div id="mc_embed_signup">
+            <form action="https://app.us17.list-manage.com/subscribe/post?u=ef65a90b3f06a47cb74275125&amp;id=53eaf47b7c&amp;f_id=002de2e3f0"
+                  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                  class="validate" target="_self" novalidate>
+              <div id="mc_embed_signup_scroll">
+                <div class="mc-field-group">
+                  <label for="mce-EMAIL">Email Address</label>
+                  <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required>
+                </div>
 
-          <!-- honeypot -->
-          <div style="position: absolute; left: -5000px;" aria-hidden="true">
-            <input type="text" name="b_ef65a90b3f06a47cb74275125_53eaf47b7c" tabindex="-1" value="">
+                <label class="mc-consent">
+                  <input type="checkbox" required>
+                  <span>I agree to receive emails from TrendForge AI.</span>
+                </label>
+
+                <div id="mce-responses" class="clear">
+                  <div class="response" id="mce-error-response" style="display:none;"></div>
+                  <div class="response" id="mce-success-response" style="display:none;"></div>
+                </div>
+
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
+                <div aria-hidden="true" style="position:absolute; left:-5000px;">
+                  <input type="text" name="b_ef65a90b3f06a47cb74275125_53eaf47b7c" tabindex="-1" value="">
+                </div>
+
+                <div class="clear">
+                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Send me the free packs">
+                </div>
+
+                <div class="mc-mini">We’ll send tips & packs you can use right away.</div>
+              </div>
+            </form>
           </div>
 
-          <button class="btn-gradient" type="submit" id="mc-submit">Send me the free packs</button>
-
-          <div class="success" id="mc-success">✅ Thanks! Redirecting you to the app…</div>
-        </form>
-        <p class="fine">We’ll send tips & packs you can use right away.</p>
+          <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+          <script> (function($){ window.fnames=[]; window.ftypes=[]; fnames[0]='EMAIL'; ftypes[0]='email'; })(jQuery); var $mcj=jQuery.noConflict(true); </script>
+        </div>
+        <!-- End Mailchimp embed -->
       </div>
     </section>
 
-    <!-- Pricing -->
+    <!-- ===== Pricing ===== -->
     <section class="block" id="pricing">
       <h2 class="section-title">Pricing</h2>
       <p class="section-sub">Start free. Upgrade when you’re ready for more.</p>
@@ -221,7 +239,7 @@
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- ===== FAQ ===== -->
     <section class="block" id="faq">
       <h2 class="section-title">FAQ</h2>
       <div class="card">
@@ -236,24 +254,12 @@
     © <span id="y"></span> TrendForge AI — All rights reserved.
   </footer>
 
-  <!-- Optional Mailchimp validation (safe to omit if desired) -->
-  <script src="https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js" defer></script>
-
   <script>
-    // Update footer year
+    // Year
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    // === Instant redirect after submit (Option 1) ===
-    const NEW_AI_URL = "https://trendforge-ai-fvt6wnejp7sjlwnr7qnhqu.streamlit.app";
-    const form = document.getElementById('mc-form');
-    const successBox = document.getElementById('mc-success');
-
-    form.addEventListener('submit', function(){
-      // show tiny success hint so users know what's happening on *this* tab
-      successBox.style.display = 'block';
-      // give Mailchimp a moment to open in new tab, then redirect this tab
-      setTimeout(()=>{ window.location.href = NEW_AI_URL; }, 600);
-    });
+    // NOTE: Redirect after submit is controlled in Mailchimp:
+    // Audience → Signup form → Embedded → Settings → “Final thank-you page”
+    // Set that to: https://trendforge-ai-fvt6wnejp7sjlwnr7qnhqu.streamlit.app/?utm_source=mc&utm_medium=embed&utm_campaign=welcome
   </script>
 </body>
 </html>
