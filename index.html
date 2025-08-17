@@ -6,70 +6,90 @@
   <title>TrendForge AI</title>
   <meta name="description" content="AI-powered content packs and weekly creator tips." />
 
-  <!-- Social share -->
+  <!-- Social share (Open Graph / Twitter) -->
   <meta property="og:title" content="TrendForge AI">
   <meta property="og:description" content="AI-powered content packs + weekly creator tips.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1200&auto=format&fit=crop">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://YOUR-DOMAIN.com">
+  <meta property="og:url" content="https://indieereports.github.io/trendforge-site/">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon / theme -->
   <link rel="icon" href="https://fav.farm/⚡">
   <meta name="theme-color" content="#2563eb">
 
-  <!-- Mailchimp Connected Site (analytics) -->
+  <!-- Mailchimp Connected Site (analytics/attribution) -->
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ef65a90b3f06a47cb74275125/9125aa35a66b9817b8290e185.js");</script>
 
+  <!-- Base styles (keeps the “good looking” version + gradient button) -->
   <style>
     :root{
-      --bg:#0b0f14; --paper:#ffffff; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0;
-      --accent:#2563eb; --accent-2:#22c55e; --radius:14px; --shadow:0 10px 30px rgba(2,6,23,.06);
+      --bg:#0b0f14;      --paper:#ffffff;   --ink:#0f172a;
+      --muted:#64748b;   --line:#e2e8f0;    --accent:#2563eb;
+      --accent-2:#22c55e;--radius:14px;     --shadow:0 10px 30px rgba(2,6,23,.06);
+      --grad: linear-gradient(90deg,#6366f1 0%, #3b82f6 50%, #22c55e 100%);
     }
-    *{box-sizing:border-box} html,body{margin:0;padding:0}
-    body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#f8fafc}
-    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
-    .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); background:#f8fafc}
+    img{max-width:100%; display:block}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1100px; margin:0 auto; padding:0 18px}
 
-    header{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .logo{width:28px;height:28px}
-    nav a{color:var(--muted);margin-left:16px} nav a:hover{color:var(--ink)}
+    /* Header */
+    header{background:var(--paper); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20}
+    .header-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
+    .logo{width:28px; height:28px}
+    nav a{color:var(--muted); margin-left:16px}
+    nav a:hover{color:var(--ink)}
 
-    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;padding:40px 0}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}}
-    .h1{font-size:clamp(28px,4vw,46px);margin:0 0 10px;line-height:1.1}
-    .lead{color:var(--muted);margin:0 0 18px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;border-radius:12px;font-weight:700;border:1px solid transparent;cursor:pointer}
-    .btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{filter:brightness(1.05)}
-    .btn-ghost{background:#eef2ff;color:var(--ink);border-color:#c7d2fe}.btn-ghost:hover{background:#e0e7ff}
-    .hero-visual{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center; padding:40px 0}
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} }
+    .h1{font-size:clamp(28px,4vw,46px); margin:0 0 10px; line-height:1.1}
+    .lead{color:var(--muted); margin:0 0 18px}
+    .cta{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 16px; border-radius:12px; font-weight:700; border:1px solid transparent; cursor:pointer}
+    .btn-ghost{background:#eef2ff; color:#111827; border-color:#c7d2fe}
+    .btn-ghost:hover{background:#e0e7ff}
+    .btn-grad{background:var(--grad); color:#fff; border:0; box-shadow:0 8px 24px rgba(99,102,241,.25)}
+    .btn-grad:hover{filter:brightness(1.05)}
+    .hero-visual{border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line)}
 
-    section.block{padding:40px 0;border-top:1px solid var(--line)}
-    .section-title{margin:0 0 6px}.section-sub{margin:0 0 20px;color:var(--muted)}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    @media (max-width:900px){.cards{grid-template-columns:1fr}}
-    .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    /* Sections */
+    section.block{padding:40px 0; border-top:1px solid var(--line)}
+    .section-title{margin:0 0 6px}
+    .section-sub{margin:0 0 20px; color:var(--muted)}
+    .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    @media (max-width:900px){ .cards{grid-template-columns:1fr} }
+    .card{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .pill{display:inline-block; padding:6px 10px; background:#ecfeff; color:#155e75; border-radius:999px; font-size:12px; font-weight:700; border:1px solid #a5f3fc}
 
-    .pricing{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    @media (max-width:900px){.pricing{grid-template-columns:1fr}}
-    .price{font-size:30px;font-weight:800}
-    .pill{display:inline-block;padding:6px 10px;background:#ecfeff;color:#155e75;border-radius:999px;font-size:12px;font-weight:700;border:1px solid #a5f3fc}
+    /* Pricing */
+    .pricing{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    @media (max-width:900px){ .pricing{grid-template-columns:1fr} }
+    .price{font-size:30px; font-weight:800}
 
-    footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid var(--line);margin-top:40px}
+    /* Embedded form (dark card, gradient button) */
+    .mc-wrap{margin:26px 0}
+    .mc-card{background:#0b1220; color:#e6edf8; border:1px solid #22314a; border-radius:16px; max-width:680px; padding:20px; box-shadow:0 30px 100px rgba(0,0,0,.45)}
+    .mc-title{margin:0 0 6px; font-size:18px}
+    .mc-sub{margin:0 0 14px; color:#a8b3c7; font-size:14px}
+    #mc_embed_signup .mc-field-group input{width:100%; padding:12px; border-radius:12px; border:1px solid #2b3a4e; background:#0e1520; color:#eaf1f7}
+    #mc_embed_signup .button{width:100%; margin-top:10px; border-radius:12px; padding:12px 16px; font-weight:700; border:0; background:var(--grad); color:#fff; cursor:pointer}
+    #mc_embed_signup .indicates-required{display:none}
+    .mc-mini{font-size:12px; color:#a5b4c8; margin-top:8px}
 
-    /* Inline signup block look */
-    .signup-card{background:#0b1220;color:#e6edf8;border:1px solid #22314a;border-radius:16px;padding:18px;max-width:640px;box-shadow:0 24px 60px rgba(0,0,0,.28)}
-    .signup-title{margin:0 0 6px}
-    .signup-sub{margin:0 0 14px;color:#a5b4c8}
-    .mc-input{width:100%;padding:12px;border-radius:12px;border:1px solid #2b3a4e;background:#0e1520;color:#eaf1f7;margin:10px 0}
-    .mc-button{width:100%;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer}
-    .mini{font-size:12px;color:#a5b4c8;margin-top:8px}
+    /* Footer */
+    footer{padding:28px 0; color:var(--muted); text-align:center; border-top:1px solid var(--line); margin-top:40px}
   </style>
+
+  <!-- Mailchimp embed CSS (kept lightweight, can live in head) -->
+  <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="wrap header-inner">
       <a class="brand" href="#">
@@ -94,47 +114,75 @@
         <h1 class="h1">Get 3 Free Content Packs</h1>
         <p class="lead">Instant ideas for TikTok & Instagram + weekly creator tips. No spam, unsubscribe anytime.</p>
         <div class="cta">
-          <!-- Try Free -> new app -->
-          <a class="btn btn-ghost" id="try-free-top" href="NEW_AI_URL_HERE">Try Free</a>
-          <a class="btn btn-primary" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5" id="upgrade-top">Upgrade to Pro — $19</a>
+          <!-- NEW AI URL here -->
+          <a class="btn btn-ghost" id="try-free-top" href="https://trendforge-ai-6vfwemjp7j4mnr7qnhqu.streamlit.app">Try Free</a>
+          <a class="btn btn-grad" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5">Upgrade to Pro — $19</a>
         </div>
       </div>
       <div class="hero-visual">
-        <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1400&auto=format&fit=crop" alt="Creator workspace">
+        <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1400&auto=format&fit=crop" alt="Creator workspace with laptop and notes" loading="lazy">
       </div>
     </section>
 
-    <!-- Value -->
+    <!-- Value props -->
     <section class="block" id="how">
       <h2 class="section-title">What you get</h2>
       <p class="section-sub">Concrete ideas + a simple plan so you can post faster and grow.</p>
       <div class="cards">
-        <div class="card"><span class="pill">Weekly</span><h3>Fresh content packs</h3><p class="lead">10–20 prompts tuned for your niche, with hooks and CTAs that are trending now.</p></div>
-        <div class="card"><span class="pill">Actionable</span><h3>3-step posting plan</h3><p class="lead">Exactly what to post, how to film, and captions that convert.</p></div>
-        <div class="card"><span class="pill">Bonus</span><h3>Creator growth tips</h3><p class="lead">Short weekly wins: idea angles, analytics moves, and offer ideas.</p></div>
+        <div class="card">
+          <span class="pill">Weekly</span>
+          <h3>Fresh content packs</h3>
+          <p class="lead">10–20 prompts tuned for your niche, with hooks and CTAs that are trending now.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Actionable</span>
+          <h3>3-step posting plan</h3>
+          <p class="lead">Exactly what to post, how to film, and captions that convert.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Bonus</span>
+          <h3>Creator growth tips</h3>
+          <p class="lead">Short weekly wins: idea angles, analytics moves, and offer ideas.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Inline signup (Mailchimp embed) -->
-    <section class="block">
+    <!-- Embedded signup (styled like the nicer dark card with gradient button) -->
+    <section class="block" id="signup">
       <h2 class="section-title">Get early access + 3 free packs</h2>
       <p class="section-sub">No spam. Unsubscribe anytime.</p>
 
-      <div class="signup-card">
-        <!-- Mailchimp embed (values from your account) -->
-        <form action="https://app.us17.list-manage.com/subscribe/post?u=ef65a90b3f06a47cb74275125&amp;id=53eaf47b7c&amp;f_id=002de2e3f0"
-              method="post" target="_blank" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
-          <input type="email" name="EMAIL" class="mc-input required email" id="mce-EMAIL" placeholder="Email address" required>
-          <label class="mini"><input type="checkbox" required> I agree to receive emails from TrendForge AI.</label>
+      <div class="mc-wrap">
+        <div class="mc-card">
+          <div id="mc_embed_signup">
+            <form action="https://app.us17.list-manage.com/subscribe/post?u=ef65a90b3f06a47cb74275125&amp;id=53eaf47b7c&amp;f_id=002de2e3f0"
+                  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                  class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+                <div class="mc-field-group">
+                  <label for="mce-EMAIL" style="display:none">Email Address</label>
+                  <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address *" required>
+                </div>
+                <!-- simple consent checkbox (not required by Mailchimp, but good UX) -->
+                <label class="mc-mini"><input type="checkbox" checked> I agree to receive emails from TrendForge AI.</label>
 
-          <!-- bot honey-pot -->
-          <div aria-hidden="true" style="position:absolute;left:-5000px">
-            <input type="text" name="b_ef65a90b3f06a47cb74275125_53eaf47b7c" tabindex="-1" value="">
+                <div id="mce-responses" class="clear" style="display:none">
+                  <div class="response" id="mce-error-response"></div>
+                  <div class="response" id="mce-success-response"></div>
+                </div>
+                <!-- honeypot -->
+                <div aria-hidden="true" style="position:absolute; left:-5000px;">
+                  <input type="text" name="b_ef65a90b3f06a47cb74275125_53eaf47b7c" tabindex="-1" value="">
+                </div>
+
+                <div class="clear">
+                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Send me the free packs">
+                </div>
+              </div>
+            </form>
           </div>
-
-          <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="mc-button">Send me the free packs</button>
-          <div id="mce-success-response" class="mini" style="display:none">Thanks! Redirecting…</div>
-        </form>
+          <div class="mc-mini">We’ll send tips & packs you can use right away.</div>
+        </div>
       </div>
     </section>
 
@@ -146,22 +194,23 @@
         <div class="card">
           <h3>Free</h3>
           <p class="price">$0</p>
-          <ul style="color:var(--muted);margin-left:18px">
+          <ul style="color:var(--muted); margin-left:18px">
             <li>3 starter content packs</li>
             <li>Weekly creator tips</li>
           </ul>
-          <a class="btn btn-ghost" id="try-free-mid" href="NEW_AI_URL_HERE">Try Free</a>
+          <!-- NEW AI URL here too -->
+          <a class="btn btn-ghost" id="try-free-mid" href="https://trendforge-ai-6vfwemjp7j4mnr7qnhqu.streamlit.app">Try Free</a>
         </div>
         <div class="card" style="border-color:#c7d2fe">
           <h3>Pro</h3>
-          <p class="price">$19 <span style="font-size:14px;color:var(--muted)">/ mo</span></p>
-          <ul style="color:var(--muted);margin-left:18px">
+          <p class="price">$19 <span style="font-size:14px; color:var(--muted)">/ mo</span></p>
+          <ul style="color:var(--muted); margin-left:18px">
             <li>Unlimited content packs</li>
             <li>Advanced templates</li>
             <li>Early feature access</li>
             <li>Priority support</li>
           </ul>
-          <a class="btn btn-primary" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5" id="upgrade-mid">Upgrade to Pro</a>
+          <a class="btn btn-grad" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5">Upgrade to Pro</a>
         </div>
       </div>
     </section>
@@ -177,26 +226,22 @@
     </section>
   </main>
 
-  <footer>
-    © <span id="y"></span> TrendForge AI — All rights reserved.
-  </footer>
+  <footer>© <span id="y"></span> TrendForge AI — All rights reserved.</footer>
 
-  <!-- Mailchimp validation (optional but fine to include) -->
+  <!-- Optional Mailchimp validation script -->
   <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
 
+  <!-- Year + redirect-after-submit -->
   <script>
-    // Set footer year
+    // Year
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // === Redirect to NEW AI after subscribe click ===
-    const NEW_AI_URL = 'https://trendforge-ai-fvt6wnejp7sjlwnr7qnhqu.streamlit.app'; // <-- put your new Streamlit URL here
-
-    // When the Mailchimp form submits, immediately redirect this tab to your new app.
+    // Redirect to NEW AI after Mailchimp submit
+    const NEW_AI_URL = "https://trendforge-ai-6vfwemjp7j4mnr7qnhqu.streamlit.app";
     const form = document.getElementById('mc-embedded-subscribe-form');
+
     form.addEventListener('submit', function () {
-      const msg = document.getElementById('mce-success-response');
-      if (msg) msg.style.display = 'block';
-      // Let Mailchimp open its own tab (target=_blank), then move this tab to your app:
+      // Mailchimp opens a new tab (target=_blank). We move THIS tab to your app, too.
       setTimeout(function(){ window.location.href = NEW_AI_URL; }, 300);
     });
   </script>
