@@ -6,7 +6,7 @@
   <title>TrendForge AI</title>
   <meta name="description" content="AI-powered content packs and weekly creator tips." />
 
-  <!-- OG/Twitter -->
+  <!-- Social share -->
   <meta property="og:title" content="TrendForge AI">
   <meta property="og:description" content="AI-powered content packs + weekly creator tips.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1200&auto=format&fit=crop">
@@ -14,42 +14,57 @@
   <meta property="og:url" content="https://indieereports.github.io/trendforge-site/">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Favicon / theme -->
   <link rel="icon" href="https://fav.farm/⚡">
   <meta name="theme-color" content="#2563eb">
 
-  <!-- (Optional analytics) Connected Site script can stay; not required for the inline form -->
+  <!-- (Optional) Mailchimp connected-site snippet; fine to keep -->
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ef65a90b3f06a47cb74275125/9125aa35a66b9817b8290e185.js");</script>
 
   <style>
     :root{
-      --bg:#0b0f14; --paper:#ffffff; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0;
-      --accent:#2563eb; --accent-2:#22c55e; --radius:14px; --shadow:0 10px 30px rgba(2,6,23,.06);
-      --grad:linear-gradient(90deg,#6366f1,#22c55e,#06b6d4);
+      --bg:#0b0f14;      /* dark bg for accents */
+      --paper:#ffffff;   /* cards / page */
+      --ink:#0f172a;     /* main text */
+      --muted:#64748b;   /* secondary text */
+      --line:#e2e8f0;    /* borders */
+      --accent:#2563eb;  /* primary blue */
+      --accent-2:#22c55e;/* secondary green */
+      --radius:16px;
+      --shadow:0 10px 30px rgba(2,6,23,.06);
     }
-    *{box-sizing:border-box} html,body{margin:0;padding:0}
-    body{font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); background:#f8fafc}
-    a{color:inherit; text-decoration:none}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink); background:#f8fafc;
+    }
     img{max-width:100%; display:block}
+    a{color:inherit; text-decoration:none}
     .wrap{max-width:1100px; margin:0 auto; padding:0 18px}
 
+    /* Header */
     header{background:var(--paper); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20}
     .header-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .brand{display:flex; gap:10px; align-items:center; font-weight:800}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
     .logo{width:28px; height:28px}
+    nav a{color:var(--muted); margin-left:16px}
+    nav a:hover{color:var(--ink)}
 
+    /* Hero */
     .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center; padding:40px 0}
     @media (max-width:900px){ .hero{grid-template-columns:1fr} }
     .h1{font-size:clamp(28px,4vw,46px); margin:0 0 10px; line-height:1.1}
     .lead{color:var(--muted); margin:0 0 18px}
     .cta{display:flex; gap:12px; flex-wrap:wrap}
     .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 16px; border-radius:12px; font-weight:700; border:1px solid transparent; cursor:pointer}
-    .btn-primary{background:var(--accent); color:#fff}
     .btn-ghost{background:#eef2ff; color:var(--ink); border-color:#c7d2fe}
     .btn-ghost:hover{background:#e0e7ff}
-    .btn-gradient{color:#fff; background:var(--grad); background-size:200% 100%; transition:filter .2s, transform .08s}
-    .btn-gradient:hover{filter:brightness(1.05)} .btn-gradient:active{transform:translateY(1px)}
+    .btn-primary{background:var(--accent); color:#fff}
+    .btn-primary:hover{filter:brightness(1.05)}
     .hero-visual{border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line)}
 
+    /* Sections */
     section.block{padding:40px 0; border-top:1px solid var(--line)}
     .section-title{margin:0 0 6px}
     .section-sub{margin:0 0 20px; color:var(--muted)}
@@ -58,35 +73,53 @@
     .card{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
     .pill{display:inline-block; padding:6px 10px; background:#ecfeff; color:#155e75; border-radius:999px; font-size:12px; font-weight:700; border:1px solid #a5f3fc}
 
-    /* Inline signup block (modern look) */
-    .signup{margin:32px 0}
-    .signup .box{background:#0b1220; color:#e6edf8; border:1px solid #22314a; border-radius:16px; padding:20px; box-shadow:0 30px 100px rgba(0,0,0,.12)}
-    .signup label{font-size:13px; color:#91a2bd}
-    .mc-row{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:10px}
-    .mc-input{flex:1 1 260px; min-width:240px; padding:12px; border-radius:12px; border:1px solid #2b3a4e; background:#0e1520; color:#eaf1f7}
-    .agree{display:flex; align-items:center; gap:8px; color:#a5b4c8; font-size:12px; margin-top:8px}
-    .mini{font-size:12px; color:#a5b4c8; margin-top:8px}
-    .success{display:none; margin-top:10px; border:2px solid #22c55e; background:#0f1726; color:#c8facc; border-radius:12px; padding:10px}
-
+    /* Pricing */
     .pricing{display:grid; grid-template-columns:1fr 1fr; gap:18px}
     @media (max-width:900px){ .pricing{grid-template-columns:1fr} }
     .price{font-size:30px; font-weight:800}
 
+    /* Footer */
     footer{padding:28px 0; color:var(--muted); text-align:center; border-top:1px solid var(--line); margin-top:40px}
+
+    /* ===== Email catcher (modern + matches site) ===== */
+    .catch{margin:34px 0 10px}
+    .catch .mini{color:var(--muted); font-size:13px; margin-bottom:10px}
+    .catch-wrap{
+      background:linear-gradient(180deg,#0b1220,#0e1729);
+      color:#e6edf8; border:1px solid #22314a;
+      border-radius:20px; padding:18px; box-shadow:0 30px 100px rgba(0,0,0,.25); max-width:640px;
+    }
+    .catch label{font-size:13px; color:#9fb0c8; display:block; margin-bottom:8px}
+    .catch input[type="email"]{
+      width:100%; padding:12px 14px; border-radius:12px;
+      background:#0e1520; color:#eaf1f7; border:1px solid #2b3a4e; outline:none;
+    }
+    .agree{display:flex; align-items:center; gap:8px; margin:10px 0; font-size:13px; color:#a9b6cc}
+    .btn-gradient{
+      width:100%; padding:12px 16px; border-radius:12px; font-weight:800; border:0; color:#fff; cursor:pointer;
+      background:linear-gradient(90deg,#22c55e 0%, #10b981 35%, #3b82f6 100%);
+      transition:transform .05s ease;
+    }
+    .btn-gradient:hover{transform:translateY(-1px)}
+    .fine{font-size:12px; color:#9fb0c8; margin-top:10px}
+    .success{display:none; margin-top:10px; border:1px solid #334155; background:#0f1726; padding:10px; border-radius:12px}
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="wrap header-inner">
       <a class="brand" href="#">
-        <svg class="logo" viewBox="0 0 24 24" fill="#2563eb" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.39 4.84L20 8.27l-4 3.9.94 5.49L12 15.77 7.06 17.66 8 12.17 4 8.27l5.61-1.43L12 2z"/></svg>
+        <svg class="logo" viewBox="0 0 24 24" fill="#2563eb" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2l2.39 4.84L20 8.27l-4 3.9.94 5.49L12 15.77 7.06 17.66 8 12.17 4 8.27l5.61-1.43L12 2z"/>
+        </svg>
         TrendForge AI
       </a>
       <nav>
         <a href="#features">Features</a>
         <a href="#how">How it works</a>
         <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
+        <a href="#signup">Get early access</a>
       </nav>
     </div>
   </header>
@@ -99,51 +132,64 @@
         <p class="lead">Instant ideas for TikTok & Instagram + weekly creator tips. No spam, unsubscribe anytime.</p>
         <div class="cta">
           <a class="btn btn-ghost" href="#signup">Try Free</a>
-          <a class="btn btn-gradient" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5">Upgrade to Pro — $19</a>
+          <a class="btn btn-primary" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5">Upgrade to Pro — $19</a>
         </div>
       </div>
       <div class="hero-visual">
-        <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1400&auto=format&fit=crop" alt="Creator workspace" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1400&auto=format&fit=crop" alt="Creator workspace with laptop and notes" loading="lazy">
       </div>
     </section>
 
-    <!-- What you get -->
+    <!-- Value props -->
     <section class="block" id="how">
       <h2 class="section-title">What you get</h2>
       <p class="section-sub">Concrete ideas + a simple plan so you can post faster and grow.</p>
       <div class="cards">
-        <div class="card"><span class="pill">Weekly</span><h3>Fresh content packs</h3><p class="lead">10–20 prompts tuned for your niche, with hooks and CTAs that are trending now.</p></div>
-        <div class="card"><span class="pill">Actionable</span><h3>3-step posting plan</h3><p class="lead">Exactly what to post, how to film, and captions that convert.</p></div>
-        <div class="card"><span class="pill">Bonus</span><h3>Creator growth tips</h3><p class="lead">Short weekly wins: idea angles, analytics moves, and offer ideas.</p></div>
+        <div class="card">
+          <span class="pill">Weekly</span>
+          <h3>Fresh content packs</h3>
+          <p class="lead" style="color:var(--muted)">10–20 prompts tuned for your niche, with hooks and CTAs that are trending now.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Actionable</span>
+          <h3>3-step posting plan</h3>
+          <p class="lead" style="color:var(--muted)">Exactly what to post, how to film, and captions that convert.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Bonus</span>
+          <h3>Creator growth tips</h3>
+          <p class="lead" style="color:var(--muted)">Short weekly wins: idea angles, analytics moves, and offer ideas.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Signup (inline, styled) -->
-    <section class="block signup" id="signup">
+    <!-- Email catcher (Mailchimp embed + instant redirect) -->
+    <section class="block catch" id="signup">
       <h2 class="section-title">Get early access + 3 free packs</h2>
-      <p class="section-sub">No spam. Unsubscribe anytime.</p>
+      <p class="mini">No spam. Unsubscribe anytime.</p>
 
-      <div class="box">
+      <div class="catch-wrap">
         <form id="mc-form"
               action="https://app.us17.list-manage.com/subscribe/post?u=ef65a90b3f06a47cb74275125&amp;id=53eaf47b7c&amp;f_id=002de2e3f0"
               method="post" target="_blank" novalidate>
           <label for="mce-EMAIL">Email address *</label>
-          <div class="mc-row">
-            <input class="mc-input" type="email" name="EMAIL" id="mce-EMAIL" required placeholder="your@email.com">
-            <button class="btn btn-gradient" type="submit" id="mc-submit">Send me the free packs</button>
-          </div>
+          <input type="email" name="EMAIL" id="mce-EMAIL" required placeholder="you@example.com">
+
           <label class="agree">
             <input type="checkbox" required>
             I agree to receive emails from TrendForge AI.
           </label>
 
-          <!-- Mailchimp honeypot -->
-          <div aria-hidden="true" style="position:absolute; left:-5000px;">
+          <!-- honeypot -->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true">
             <input type="text" name="b_ef65a90b3f06a47cb74275125_53eaf47b7c" tabindex="-1" value="">
           </div>
 
-          <div class="success" id="mc-success">✅ Thanks — redirecting you to the app…</div>
+          <button class="btn-gradient" type="submit" id="mc-submit">Send me the free packs</button>
+
+          <div class="success" id="mc-success">✅ Thanks! Redirecting you to the app…</div>
         </form>
+        <p class="fine">We’ll send tips & packs you can use right away.</p>
       </div>
     </section>
 
@@ -153,18 +199,24 @@
       <p class="section-sub">Start free. Upgrade when you’re ready for more.</p>
       <div class="pricing">
         <div class="card">
-          <h3>Free</h3><p class="price">$0</p>
+          <h3>Free</h3>
+          <p class="price">$0</p>
           <ul style="color:var(--muted); margin-left:18px">
-            <li>3 starter content packs</li><li>Weekly creator tips</li>
+            <li>3 starter content packs</li>
+            <li>Weekly creator tips</li>
           </ul>
           <a class="btn btn-ghost" href="#signup">Try Free</a>
         </div>
         <div class="card" style="border-color:#c7d2fe">
-          <h3>Pro</h3><p class="price">$19 <span style="font-size:14px; color:var(--muted)">/ mo</span></p>
+          <h3>Pro</h3>
+          <p class="price">$19 <span style="font-size:14px; color:var(--muted)">/ mo</span></p>
           <ul style="color:var(--muted); margin-left:18px">
-            <li>Unlimited content packs</li><li>Advanced templates</li><li>Early feature access</li><li>Priority support</li>
+            <li>Unlimited content packs</li>
+            <li>Advanced templates</li>
+            <li>Early feature access</li>
+            <li>Priority support</li>
           </ul>
-          <a class="btn btn-gradient" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5">Upgrade to Pro</a>
+          <a class="btn btn-primary" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5">Upgrade to Pro</a>
         </div>
       </div>
     </section>
@@ -180,21 +232,27 @@
     </section>
   </main>
 
-  <footer>© <span id="y"></span> TrendForge AI — All rights reserved.</footer>
+  <footer>
+    © <span id="y"></span> TrendForge AI — All rights reserved.
+  </footer>
 
-  <!-- JS: year + redirect after MC submit -->
+  <!-- Optional Mailchimp validation (safe to omit if desired) -->
+  <script src="https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js" defer></script>
+
   <script>
+    // Update footer year
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // 🔗 Your Streamlit app URL
+    // === Instant redirect after submit (Option 1) ===
     const NEW_AI_URL = "https://trendforge-ai-fvt6wnejp7sjlwnr7qnhqu.streamlit.app";
-
-    // When Mailchimp submits (new tab), show success here and redirect this tab.
     const form = document.getElementById('mc-form');
-    const ok = document.getElementById('mc-success');
+    const successBox = document.getElementById('mc-success');
+
     form.addEventListener('submit', function(){
-      ok.style.display = 'block';
-      setTimeout(()=>{ window.location.href = NEW_AI_URL; }, 800);
+      // show tiny success hint so users know what's happening on *this* tab
+      successBox.style.display = 'block';
+      // give Mailchimp a moment to open in new tab, then redirect this tab
+      setTimeout(()=>{ window.location.href = NEW_AI_URL; }, 600);
     });
   </script>
 </body>
