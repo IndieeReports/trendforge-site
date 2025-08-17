@@ -6,7 +6,7 @@
   <title>TrendForge AI</title>
   <meta name="description" content="AI-powered content packs and weekly creator tips." />
 
-  <!-- Social share (Open Graph / Twitter) -->
+  <!-- Social share -->
   <meta property="og:title" content="TrendForge AI">
   <meta property="og:description" content="AI-powered content packs + weekly creator tips.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1200&auto=format&fit=crop">
@@ -14,107 +14,95 @@
   <meta property="og:url" content="https://YOUR-DOMAIN.com">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Optional favicon / theme color -->
+  <!-- Favicon / theme -->
   <link rel="icon" href="https://fav.farm/⚡">
   <meta name="theme-color" content="#2563eb">
 
-  <!-- Mailchimp Connected Site (analytics / targeting) -->
+  <!-- Mailchimp Connected Site (analytics ok) -->
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ef65a90b3f06a47cb74275125/9125aa35a66b9817b8290e185.js");</script>
 
-  <!-- ===== Theme & base styles ===== -->
+  <!-- Base styles -->
   <style>
     :root{
-      --bg:#0b0f14;      /* page background for dark sections */
-      --paper:#ffffff;   /* card/background */
-      --ink:#0f172a;     /* main text */
-      --muted:#64748b;   /* secondary text */
-      --line:#e2e8f0;    /* borders */
-      --accent:#2563eb;  /* primary buttons/links */
-      --accent-2:#22c55e;/* secondary accent */
-      --radius:14px;
-      --shadow:0 10px 30px rgba(2,6,23,.06);
+      --bg:#0b0f14; --paper:#ffffff; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0;
+      --accent:#2563eb; --accent-2:#22c55e; --radius:14px; --shadow:0 10px 30px rgba(2,6,23,.06);
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color:var(--ink); background:#f8fafc}
-    img{max-width:100%; display:block}
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:1100px; margin:0 auto; padding:0 18px}
+    *{box-sizing:border-box} html,body{margin:0;padding:0}
+    body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#f8fafc}
+    img{max-width:100%;display:block} a{text-decoration:none;color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
 
     /* Header */
-    header{background:var(--paper); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20}
-    .header-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
-    .logo{width:28px; height:28px}
-    nav a{color:var(--muted); margin-left:16px}
-    nav a:hover{color:var(--ink)}
+    header{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .logo{width:28px;height:28px} nav a{color:var(--muted);margin-left:16px} nav a:hover{color:var(--ink)}
 
     /* Hero */
-    .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center; padding:40px 0}
-    @media (max-width:900px){ .hero{grid-template-columns:1fr} }
-    .h1{font-size:clamp(28px,4vw,46px); margin:0 0 10px; line-height:1.1}
-    .lead{color:var(--muted); margin:0 0 18px}
-    .cta{display:flex; gap:12px; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 16px; border-radius:12px; font-weight:700; border:1px solid transparent; cursor:pointer; text-decoration:none}
-    .btn-primary{background:var(--accent); color:#fff}
-    .btn-primary:hover{filter:brightness(1.05)}
-    .btn-ghost{background:#eef2ff; color:var(--ink); border-color:#c7d2fe}
-    .btn-ghost:hover{background:#e0e7ff}
-    .hero-visual{border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line)}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;padding:40px 0}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    .h1{font-size:clamp(28px,4vw,46px);margin:0 0 10px;line-height:1.1}
+    .lead{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;border-radius:12px;font-weight:700;border:1px solid transparent;cursor:pointer}
+    .btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{filter:brightness(1.05)}
+    .btn-ghost{background:#eef2ff;color:var(--ink);border-color:#c7d2fe}.btn-ghost:hover{background:#e0e7ff}
+    .hero-visual{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
 
-    /* Section blocks */
-    section.block{padding:40px 0; border-top:1px solid var(--line)}
-    .section-title{margin:0 0 6px}
-    .section-sub{margin:0 0 20px; color:var(--muted)}
-    .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
-    @media (max-width:900px){ .cards{grid-template-columns:1fr} }
-    .card{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    /* Sections */
+    section.block{padding:40px 0;border-top:1px solid var(--line)}
+    .section-title{margin:0 0 6px}.section-sub{margin:0 0 20px;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media (max-width:900px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .pill{display:inline-block;padding:6px 10px;background:#ecfeff;color:#155e75;border-radius:999px;font-size:12px;font-weight:700;border:1px solid #a5f3fc}
 
     /* Pricing */
-    .pricing{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-    @media (max-width:900px){ .pricing{grid-template-columns:1fr} }
-    .price{font-size:30px; font-weight:800}
-    .pill{display:inline-block; padding:6px 10px; background:#ecfeff; color:#155e75; border-radius:999px; font-size:12px; font-weight:700; border:1px solid #a5f3fc}
+    .pricing{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width:900px){.pricing{grid-template-columns:1fr}}
+    .price{font-size:30px;font-weight:800}
 
     /* Footer */
-    footer{padding:28px 0; color:var(--muted); text-align:center; border-top:1px solid var(--line); margin-top:40px}
+    footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid var(--line);margin-top:40px}
 
-    /* ===== Inline (embedded) signup styles to match popup ===== */
-    #mc_embed_signup{
-      background:#0b1220; /* dark card like your popup */
-      border:1px solid #22314a;
-      color:#e6edf8;
-      border-radius:16px;
-      box-shadow:0 30px 100px rgba(0,0,0,.15);
-      padding:18px;
-      font:14px ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      max-width:640px;
-      width:100%;
+    /* ===== Signup section (pretty card) ===== */
+    .signup{padding:56px 0 34px;border-top:1px solid var(--line)}
+    .signup .title{font-size:clamp(22px,3vw,28px);margin:0 0 8px}
+    .signup .sub{color:var(--muted);margin:0 0 18px}
+    .mc-card{
+      max-width:780px;border-radius:18px;margin:14px 0;background:
+        radial-gradient(1200px 400px at -10% 0%, #1f2a44 0, #151a28 35%, #101520 65%, #0d121b 100%);
+      color:#eaf1f7;border:1px solid #26334a;box-shadow:0 30px 80px rgba(2,6,23,.4);
+      padding:22px; position:relative; overflow:hidden;
     }
-    #mc_embed_signup label{ color:#cbd5e1; font-weight:600; }
-    #mc_embed_signup input[type=email]{
-      width:100%; padding:12px; border-radius:12px; border:1px solid #2b3a4e;
-      background:#0e1520; color:#eaf1f7; outline:none;
+    .mc-card::after{
+      content:""; position:absolute; inset:-1px; border-radius:18px; pointer-events:none;
+      background:linear-gradient(135deg,rgba(37,99,235,.25),rgba(34,197,94,.18));
+      mix-blend-mode:overlay; opacity:.35;
     }
-    #mc-embedded-subscribe{
-      background:#2563eb; color:#fff; border:0; border-radius:12px; padding:12px 16px;
-      font-weight:700; cursor:pointer; width:100%;
+    .mc-card label{font-weight:600; font-size:14px; color:#c8d3e6}
+    .mc-input{
+      width:100%; padding:14px 16px; border-radius:12px; border:1px solid #2a3a52;
+      background:#0e1520; color:#eaf1f7; margin:8px 0 12px; outline:none;
     }
-    #mc-embedded-subscribe:hover{ filter:brightness(1.05); }
-    #mc_embed_signup .indicates-required{ color:#94a3b8; }
-    #mce-success-response{
-      border:2px solid #2563eb; background:#0f1726; color:#e6edf8;
-      border-radius:12px; padding:10px; margin-top:10px;
+    .mc-input:focus{border-color:#3b82f6; box-shadow:0 0 0 3px rgba(59,130,246,.25)}
+    .mc-button{
+      width:100%; display:inline-flex; justify-content:center; align-items:center; gap:8px;
+      padding:13px 16px; border-radius:12px; border:0; font-weight:800; cursor:pointer;
+      color:#fff; background:linear-gradient(135deg,#2563eb,#22c55e);
+      box-shadow:0 10px 30px rgba(37,99,235,.35);
     }
-    #mce-error-response{ color:#fecaca; margin-top:10px; }
+    .mc-button:hover{filter:brightness(1.05)}
+    .mc-mini{font-size:12px;color:#9fb0c9;margin-top:8px}
+    .mc-check{display:flex;gap:10px;align-items:flex-start;margin:6px 0 14px}
+    .success{display:none;border:1px solid #2ea043;background:#0b1b12;color:#b7f0cd;padding:10px;border-radius:10px;margin-top:10px}
   </style>
 </head>
 <body>
-  <!-- ===== Header ===== -->
+  <!-- Header -->
   <header>
     <div class="wrap header-inner">
       <a class="brand" href="#">
-        <!-- Inline SVG logo -->
         <svg class="logo" viewBox="0 0 24 24" fill="#2563eb" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M12 2l2.39 4.84L20 8.27l-4 3.9.94 5.49L12 15.77 7.06 17.66 8 12.17 4 8.27l5.61-1.43L12 2z"/>
         </svg>
@@ -130,16 +118,14 @@
   </header>
 
   <main class="wrap">
-    <!-- ===== Hero ===== -->
+    <!-- Hero -->
     <section class="hero" id="features">
       <div>
         <h1 class="h1">Get 3 Free Content Packs</h1>
         <p class="lead">Instant ideas for TikTok & Instagram + weekly creator tips. No spam, unsubscribe anytime.</p>
         <div class="cta">
-          <!-- Try Free scrolls to the embedded form -->
-          <a class="btn btn-ghost" href="#signup">Try Free</a>
-          <!-- Upgrade (Lemon Squeezy) -->
-          <a class="btn btn-primary" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5">Upgrade to Pro — $19</a>
+          <a class="btn btn-ghost" href="#signup" id="try-free-top">Try Free</a>
+          <a class="btn btn-primary" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5" id="upgrade-top">Upgrade to Pro — $19</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -147,7 +133,7 @@
       </div>
     </section>
 
-    <!-- ===== Value props ===== -->
+    <!-- Value props -->
     <section class="block" id="how">
       <h2 class="section-title">What you get</h2>
       <p class="section-sub">Concrete ideas + a simple plan so you can post faster and grow.</p>
@@ -170,63 +156,36 @@
       </div>
     </section>
 
-    <!-- ===== Inline (embedded) signup ===== -->
-    <section class="block" id="signup">
-      <h2 class="section-title">Get early access + 3 free packs</h2>
-      <p class="section-sub">No spam. Unsubscribe anytime.</p>
+    <!-- Signup (pretty embed) -->
+    <section class="signup" id="signup">
+      <h2 class="title">Get early access + 3 free packs</h2>
+      <p class="sub">No spam. Unsubscribe anytime.</p>
 
-      <div id="mc_embed_shell">
-        <!-- Mailchimp’s base CSS (optional to move into <head>) -->
-        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+      <div class="mc-card">
+        <!-- Mailchimp embed (uses your exact list/action/u/id/f_id/antibot name) -->
+        <form action="https://app.us17.list-manage.com/subscribe/post?u=ef65a90b3f06a47cb74275125&amp;id=53eaf47b7c&amp;f_id=002de2e3f0"
+              method="post" target="_blank" novalidate>
+          <label for="mce-EMAIL">Email address</label>
+          <input class="mc-input" type="email" name="EMAIL" id="mce-EMAIL" placeholder="your@email.com" required>
 
-        <div id="mc_embed_signup">
-          <form action="https://app.us17.list-manage.com/subscribe/post?u=ef65a90b3f06a47cb74275125&amp;id=53eaf47b7c&amp;f_id=002de2e3f0"
-                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                class="validate" target="_blank" novalidate>
+          <div class="mc-check">
+            <input type="checkbox" id="agree" required>
+            <label for="agree" class="mc-mini">I agree to receive emails from TrendForge AI.</label>
+          </div>
 
-            <div id="mc_embed_signup_scroll">
-              <div class="mc-field-group">
-                <label for="mce-EMAIL">Email address <span class="asterisk">*</span></label>
-                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required>
-              </div>
+          <!-- Bot trap (keep) -->
+          <div aria-hidden="true" style="position:absolute;left:-5000px;">
+            <input type="text" name="b_ef65a90b3f06a47cb74275125_53eaf47b7c" tabindex="-1" value="">
+          </div>
 
-              <div class="indicates-required" style="margin-top:6px;">
-                <label style="display:flex;gap:8px;align-items:center;color:#94a3b8;">
-                  <input type="checkbox" required style="accent-color:#2563eb;">
-                  I agree to receive emails from TrendForge AI.
-                </label>
-              </div>
+          <button class="mc-button" type="submit">Send me the free packs</button>
 
-              <div id="mce-responses" class="clear">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-              </div>
-
-              <!-- Bot field (leave) -->
-              <div style="position:absolute; left:-5000px;" aria-hidden="true">
-                <input type="text" name="b_ef65a90b3f06a47cb74275125_53eaf47b7c" tabindex="-1" value="">
-              </div>
-
-              <div class="clear" style="margin-top:10px;">
-                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Send me the free packs">
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <!-- Mailchimp validation script -->
-        <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-        <script>
-          (function($){
-            window.fnames = []; window.ftypes = [];
-            fnames[0]='EMAIL'; ftypes[0]='email';
-          }(jQuery));
-          var $mcj = jQuery.noConflict(true);
-        </script>
+          <div class="success" id="mc-success">Thanks — check your inbox!</div>
+        </form>
       </div>
     </section>
 
-    <!-- ===== Pricing ===== -->
+    <!-- Pricing -->
     <section class="block" id="pricing">
       <h2 class="section-title">Pricing</h2>
       <p class="section-sub">Start free. Upgrade when you’re ready for more.</p>
@@ -234,27 +193,27 @@
         <div class="card">
           <h3>Free</h3>
           <p class="price">$0</p>
-          <ul style="color:var(--muted); margin-left:18px">
+          <ul style="color:var(--muted);margin-left:18px">
             <li>3 starter content packs</li>
             <li>Weekly creator tips</li>
           </ul>
-          <a class="btn btn-ghost" href="#signup">Try Free</a>
+          <a class="btn btn-ghost" href="#signup" id="try-free-mid">Try Free</a>
         </div>
         <div class="card" style="border-color:#c7d2fe">
           <h3>Pro</h3>
-          <p class="price">$19 <span style="font-size:14px; color:var(--muted)">/ mo</span></p>
-          <ul style="color:var(--muted); margin-left:18px">
+          <p class="price">$19 <span style="font-size:14px;color:var(--muted)">/ mo</span></p>
+          <ul style="color:var(--muted);margin-left:18px">
             <li>Unlimited content packs</li>
             <li>Advanced templates</li>
             <li>Early feature access</li>
             <li>Priority support</li>
           </ul>
-          <a class="btn btn-primary" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5">Upgrade to Pro</a>
+          <a class="btn btn-primary" href="https://trendforgeai.lemonsqueezy.com/buy/e032d8d6-ac5d-4f5e-baf3-ad451ba45dc5" id="upgrade-mid">Upgrade to Pro</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== FAQ ===== -->
+    <!-- FAQ -->
     <section class="block" id="faq">
       <h2 class="section-title">FAQ</h2>
       <div class="card">
@@ -269,9 +228,18 @@
     © <span id="y"></span> TrendForge AI — All rights reserved.
   </footer>
 
-  <!-- Tiny helper: year in footer -->
+  <!-- Optional: Mailchimp validation script (kept lightweight UX) -->
+  <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Tiny client-side “success” cue (Mailchimp still opens a new tab)
+    const formEl = document.querySelector('.mc-card form');
+    const ok = document.getElementById('mc-success');
+    formEl.addEventListener('submit', () => {
+      ok.style.display = 'block';
+      setTimeout(()=> ok.style.display = 'none', 1800);
+    });
   </script>
 </body>
 </html>
