@@ -201,71 +201,9 @@
     © <span id="y"></span> TrendForge AI — All rights reserved.
   </footer>
 
-  <!-- ===== Email popup (Mailchimp later) ===== -->
-  <div class="modal-backdrop" id="popup" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mc-title">
-      <button class="close" title="Close" aria-label="Close" id="close-popup">×</button>
-      <h3 id="mc-title">Get 3 Free Content Packs</h3>
-      <p>Instant ideas for TikTok & Instagram + weekly creator tips.</p>
 
-      <!-- Mailchimp embed (fill later). Keeps structure ready. -->
-      <form action="<!-- TODO_MAILCHIMP_ACTION_URL -->" method="post" target="_blank" novalidate id="mc-form">
-        <input type="hidden" name="u" value="<!-- TODO_U -->">
-        <input type="hidden" name="id" value="<!-- TODO_ID -->">
-        <input class="mc-input" type="email" name="EMAIL" placeholder="Your email" required>
-        <label class="mini"><input type="checkbox" required> I agree to receive emails from TrendForge AI.</label>
-        <button class="mc-button" type="submit">Send me the free packs</button>
-        <div id="mc-success" class="successbox" style="display:none">✅ Thanks — check your inbox!</div>
-      </form>
-
-      <p class="mini">No spam. Unsubscribe anytime.</p>
-    </div>
   </div>
 
-  <!-- ===== Scripts ===== -->
-  <script>
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // ===== POPUP TOGGLE =====
-    // Flip to true when you have Mailchimp action/u/id in place.
-    const ENABLE_POPUP = false; // stays off for now
-
-    const TRY_FREE_IDS = ['try-free-top','try-free-mid'];  // which buttons could open popup
-    const UPGRADE_IDS  = ['upgrade-top','upgrade-mid'];    // upgrade buttons
-
-    if (ENABLE_POPUP) {
-      const popup = document.getElementById('popup');
-      const closeBtn = document.getElementById('close-popup');
-      const showPopup = () => { popup.style.display = 'flex'; popup.setAttribute('aria-hidden','false'); };
-      const hidePopup = () => { popup.style.display = 'none'; popup.setAttribute('aria-hidden','true'); };
-
-      // open after delay
-      setTimeout(showPopup, 5000);
-
-      // open on "Try Free" click
-      TRY_FREE_IDS.forEach(id=>{
-        const el = document.getElementById(id);
-        if (el) el.addEventListener('click', (e)=>{ e.preventDefault(); showPopup(); });
-      });
-
-      // close handlers
-      closeBtn?.addEventListener('click', hidePopup);
-      popup?.addEventListener('click', (e)=>{ if (e.target===popup) hidePopup(); });
-
-      // success anchor handler (optional)
-      if (location.hash === '#mc-success') {
-        showPopup();
-        const s = document.getElementById('mc-success');
-        if (s) s.style.display = 'block';
-      }
-    } else {
-      // popup disabled → ensure Try Free just follows its link
-      TRY_FREE_IDS.forEach(id=>{
-        const el = document.getElementById(id);
-        if (el) el.onclick = null;
-      });
-    }
-  </script>
+ 
 </body>
 </html>
